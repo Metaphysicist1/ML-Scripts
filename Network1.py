@@ -11,4 +11,7 @@ class Network(nn.Module):
         self.output = nn.Linear(64,10)
 
     def forward(self,x):
-        x = 
+        x = F.relu(self.hidden1(x))
+        x = F.relu(self.hidden2(x))
+        x = F.softmax(self.output(x))
+        return x
